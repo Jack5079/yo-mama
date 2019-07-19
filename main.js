@@ -7,12 +7,14 @@ The jokes are from the Yo Mama channel
   let m = function (a) { // This function returns the maker function so I don't need to copy paste my changes to every one
     return function () { // Return the function
       let element = document.createElement('div') // Create the holder element
-
-      let joke = document.createElement('h2') // Create the joke element
       let yomama = jokes[a][Math.floor(Math.random() * jokes[a].length)] //  yomama is the joke object
 
-      joke.innerText = yomama.joke // Change its text to a random fat joke
-      element.appendChild(joke) // Add the joke element to the holder
+      if (yomama.joke) {
+        let joke = document.createElement('h2') // Create the joke element
+        joke.innerText = yomama.joke // Change its text to a random fat joke
+        element.appendChild(joke) // Add the joke element to the holder
+      }
+
       if (yomama.url) {
         let embed = document.createElement('iframe')
         embed.src = yomama.url // Set the URL to the yo mama joke's url
