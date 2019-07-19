@@ -1,6 +1,4 @@
 /*
-The code below *is* my code
-Please don't steal it.
 The jokes are from the Yo Mama channel
 */
 (async function () {
