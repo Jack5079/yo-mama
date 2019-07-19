@@ -13,14 +13,15 @@ The jokes are from the Yo Mama channel
 
       joke.innerText = yomama.joke // Change its text to a random fat joke
       element.appendChild(joke) // Add the joke element to the holder
-
-      let embed = document.createElement('iframe')
-      embed.src = yomama.url // Set the URL to the yo mama joke's url
-      embed.width = '560' // Set the width to the correct amount
-      embed.height = '315' // Set the height to the correct amount
-      embed.allow = 'accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture' // Give it the right permissions
-      embed.frameBorder = 0 // Remove the border
-      element.appendChild(embed) // Add the video to the holder
+      if (yomama.url) {
+        let embed = document.createElement('iframe')
+        embed.src = yomama.url // Set the URL to the yo mama joke's url
+        embed.width = '560' // Set the width to the correct amount
+        embed.height = '315' // Set the height to the correct amount
+        embed.allow = 'accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture' // Give it the right permissions
+        embed.frameBorder = 0 // Remove the border
+        element.appendChild(embed) // Add the video to the holder
+      }
 
       document.body.appendChild(element) // Add the holder to the body
     }
