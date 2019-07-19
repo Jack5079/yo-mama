@@ -21,7 +21,7 @@ The jokes are from the Yo Mama channel
         embed.frameBorder = 0 // Remove the border
         element.appendChild(embed) // Add the video to the holder
       } catch {
-        element.innerHTML = '<h2>There\'s no yo mama jokes for that category. Sorry!'
+        element.innerHTML = '<h2>There\'s no yo mama jokes for that category. Sorry!</h2>'
       }
       document.body.appendChild(element) // Add the holder to the body
     }
