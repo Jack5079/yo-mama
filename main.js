@@ -1,8 +1,8 @@
 /*
 The jokes are from the Yo Mama channel
 */
-(async function () {
-  let jokes = await (window.fetch('jokes.json').then(r => r.json())) // Get the jokes
+
+  let jokes = window.fetch('jokes.json').then(r => r.json()) // Get the jokes
 
   let m = function (a) { // This function returns the maker function so I don't need to copy paste my changes to every one
     return function () { // Return the function
@@ -33,4 +33,3 @@ The jokes are from the Yo Mama channel
     button.onclick = m(name) // Add the onclick event
     document.body.appendChild(button) // Add it to the body
   })
-})()
