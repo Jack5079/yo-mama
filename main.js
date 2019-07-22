@@ -16,7 +16,7 @@ The jokes are from the Yo Mama channel
     }
   }
 
-  Object.keys(jokes).forEach((name) => { // For every joke category
+  Object.keys(jokes).forEach(name => { // For every joke category
     let button = document.createElement('button') // Make a button element
     button.innerText = name.charAt(0).toUpperCase() + name.slice(1) // Make the name of the button the category name but the first letter is uppercase
     button.onclick = m(name) // Add the onclick event
