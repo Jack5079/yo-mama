@@ -2,7 +2,8 @@
 The jokes are from the Yo Mama channel
 */
 (async function () {
-  let jokes = await (window.fetch('jokes.json').then(r => r.json())) // Get the jokes
+  let jokefile = await window.fetch('jokes.json') // Get the joke file
+  let jokes = await jokefile.json() // Convert the jokes to JSON
 
   let m = function (a) { // This function returns the maker function so I don't need to copy paste my changes to every one
     return function () { // Return the function
