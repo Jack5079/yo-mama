@@ -23,12 +23,25 @@ let jokes = { // The joke list
 }
 let addjoke = function (category) { // This function returns the maker function so I don't need to copy paste my changes to every one
   return function () { // Return the function
-    let element = document.createElement('div') // Create the holder element
+    let jokeHolder = document.createElement('div') // Create the holder element
     let yomama = jokes[category][Math.floor(Math.random() * jokes[category].length)] //  yomama is the joke object
-    element.innerHTML = `
-      <h2>Yo mama so ${category}, ${yomama.joke}</h2>
-      ${yomama.url ? `<iframe src="${yomama.url}" width="560" height="315" frameborder="0"></iframe>` : ''} 
-      `
+
+    let title = document.createElement('h2')
+    title.innerText = `Yo mama so ${category}, ${yomama.joke}`
+    jokeHolder.appendChild(title)
+    if (yomama.hasOwnProperty('url')) { // If the url is there
+      let video = document.createElement('iframe')
+
+      video.src = yomama.url
+
+      video.allowFullscreen = true
+      video.frameBorder = '0'
+      video.allow = 'accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture'
+      video.width = '560'
+      video.height = '315'
+
+      jokeHolder.appendChild(video)
+    }
   }
 }
 
