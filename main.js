@@ -1,6 +1,5 @@
-/*
-The jokes are from the Yo Mama channel
-*/
+// Code for jack5079.github.io/yo-mama/
+
 let jokes = { // The joke list
   fat: [ // Fat jokes
     {
