@@ -11,7 +11,7 @@ The jokes are from the Yo Mama channel
       let yomama = jokes[category][Math.floor(Math.random() * jokes[category].length)] //  yomama is the joke object
       element.innerHTML = `
       <h2>${yomama.joke}</h2>
-      <iframe src="${yomama.url}" width="560" height="315" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" frameborder="0"></iframe>
+      <iframe src="${yomama.url}" width="560" height="315" frameborder="0"></iframe>
       `
     }
   }
