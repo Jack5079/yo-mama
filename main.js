@@ -21,13 +21,16 @@ let jokes = { // The joke list
   ],
   ugly: [] // Ugly jokes
 }
-let addjoke = function (category) { // This function returns the maker function so I don't need to copy paste my changes to every one
-  return function () { // Return the function
+
+Object.keys(jokes).forEach(name => { // For every joke category
+  let button = document.createElement('button') // Make a button element
+  button.innerText = name.charAt(0).toUpperCase() + name.slice(1) // Make the name of the button the category name but the first letter is uppercase
+  button.onclick = function () { // Add the onclick event
     let jokeHolder = document.createElement('div') // Create the holder element
-    let yomama = jokes[category][Math.floor(Math.random() * jokes[category].length)] //  yomama is the joke object
+    let yomama = jokes[name][Math.floor(Math.random() * jokes[name].length)] //  yomama is the joke object
 
     let title = document.createElement('h2')
-    title.innerText = `Yo mama so ${category}, ${yomama.joke}`
+    title.innerText = `Yo mama so ${name}, ${yomama.joke}`
     jokeHolder.appendChild(title)
     if (yomama.hasOwnProperty('url')) { // If the url is there
       let video = document.createElement('iframe')
@@ -43,11 +46,5 @@ let addjoke = function (category) { // This function returns the maker function 
       jokeHolder.appendChild(video)
     }
   }
-}
-
-Object.keys(jokes).forEach(name => { // For every joke category
-  let button = document.createElement('button') // Make a button element
-  button.innerText = name.charAt(0).toUpperCase() + name.slice(1) // Make the name of the button the category name but the first letter is uppercase
-  button.onclick = addjoke(name) // Add the onclick event
   document.body.appendChild(button) // Add it to the body
 })
