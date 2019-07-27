@@ -11,14 +11,12 @@ let jokes = { // The joke list
       url: 'https://www.youtube.com/embed/oXsTjVLKIUc?start=22'
     }
   ],
-  stupid: [], // Stupid jokes
   hot: [ // Hot jokes
     {
       joke: 'she makes the sun sweat!',
       url: 'https://www.youtube.com/embed/NO-W-STrARA?start=44'
     }
-  ],
-  ugly: [] // Ugly jokes
+  ]
 }
 
 Object.keys(jokes).forEach(name => { // For every joke category
