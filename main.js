@@ -27,7 +27,7 @@ Object.keys( jokes ).forEach( name => { // For every joke category
     let yomama = jokes[ name ][ Math.floor( Math.random() * jokes[ name ].length ) ] //  yomama is the joke object
 
     let title = document.createElement( 'h2' )
-    title.innerText = `Yo mama so ${ 'name' }, ${ yomama.joke }`
+    title.innerText = `Yo mama so ${name }, ${ yomama.joke }`
     jokeHolder.appendChild( title )
       let video = document.createElement( 'iframe' )
 
